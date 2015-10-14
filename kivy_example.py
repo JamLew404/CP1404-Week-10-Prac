@@ -29,4 +29,9 @@ class ConvertMilesToKilometres(App):
         result = value / M_to_KM
         self.root.ids.output_label.text = str(result)
 
+    def apply_increment(self, change):
+        value = self.get_conversion() + change
+        self.root.ids.input_conversion.text = str(value)
+        self.calculate_conversion()
+
 ConvertMilesToKilometres().run()
