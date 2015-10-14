@@ -1,0 +1,12 @@
+BoxLayout:
+    orientation: 'vertical'
+    TextInput:
+        id: input_name
+        text: ' ! '
+    Button:
+        text: 'Convert M to KM'
+        on_press: app.convert_lengths()
+    Label:
+        text: 'Enter the amount'
+        color: (1, 1, 0, 1)
+        id: output_label
