@@ -3,7 +3,7 @@ __author__ = 'James'
 from kivy.app import App
 from kivy.lang import Builder
 
-# practice
+M_to_KM = 1000
 
 
 class ConvertMilesToKilometres(App):
@@ -11,10 +11,22 @@ class ConvertMilesToKilometres(App):
         self.title = "Miles to Kilometres"
         self.root = Builder.load_file('kivy_example.kv')
         print("test)")
-        self.root.ids.output_label.text = "Hello "
+        self.root.ids.output_label.text = "Enter amount to convert "
         return self.root
 
     def convert_lengths(self):
-        print("test")
-        self.root.ids.output_label.text = "Hello " + self.root.ids.input_name.text
+        self.root.ids.output_label.text = " " + self.root.ids.input_conversion.text
 
+    def get_conversion(self):
+        try:
+            value = float(self.root.ids.input_conversion.text)
+            return value
+        except ValueError:
+            return 0
+
+    def calculate_conversion(self):
+        value = self.get_conversion()
+        result = value / M_to_KM
+        self.root.ids.output_label.text = str(result)
+
+ConvertMilesToKilometres().run()
