@@ -15,7 +15,8 @@ BoxLayout:
                 text: 'Down'
                 on_press: app.apply_increment(-10)
     Button:
-        text: 'Convert M to KM'
+#    M to KM isn't descriptive enough.
+        text: 'Convert Metres to Kilometres'
         on_press: app.calculate_conversion()
     Label:
         text: 'Enter the amount'

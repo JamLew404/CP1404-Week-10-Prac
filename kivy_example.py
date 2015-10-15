@@ -3,15 +3,17 @@ __author__ = 'James'
 from kivy.app import App
 from kivy.lang import Builder
 
-M_to_KM = 1000
-
+METRES_IN_KILOMETRE = 1000
+# Poor name for a constant, very little description for readability.
+# Constants should also be all uppercase.
 
 class ConvertMilesToKilometres(App):
     def build(self):
         self.title = "Miles to Kilometres"
         self.root = Builder.load_file('kivy_example.kv')
-        print("test)")
-        self.root.ids.output_label.text = "Enter amount to convert "
+        print("Test")
+        # Removed the extra ) in your text string.
+        self.root.ids.output_label.text = "Enter amount to convert."
         return self.root
 
     def convert_lengths(self):
@@ -26,7 +28,7 @@ class ConvertMilesToKilometres(App):
 
     def calculate_conversion(self):
         value = self.get_conversion()
-        result = value / M_to_KM
+        result = value / METRES_IN_KILOMETRE
         self.root.ids.output_label.text = str(result)
 
     def apply_increment(self, change):
